@@ -6,6 +6,17 @@ public class NewExam implements Exam {
     private int math;
     private int comp;
 
+    public NewExam() {
+        this(0, 0, 0, 0);
+    }
+
+    public NewExam(int kor, int eng, int math, int comp) {
+        this.kor = kor;
+        this.eng = eng;
+        this.math = math;
+        this.comp = comp;
+    }
+
     @Override
     public int total() {
         return this.kor + this.eng + this.math + this.comp;
