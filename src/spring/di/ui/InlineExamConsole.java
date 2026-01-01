@@ -13,7 +13,7 @@ public class InlineExamConsole implements ExamConsole {
 
     @Override
     public void print() {
-        System.out.printf("Total: %d | AVG: %f", this.exam.total(), this.exam.avg());
+        System.out.printf("Total: %d | AVG: %f%n", this.exam.total(), this.exam.avg());
     }
 
     @Override

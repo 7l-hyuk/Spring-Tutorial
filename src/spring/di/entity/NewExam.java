@@ -27,6 +27,11 @@ public class NewExam implements Exam {
         return this.total() / 4.0f;
     }
 
+    @Override
+    public String toString() {
+        return "NewExam [kor=" + kor + ", eng=" + eng + ", math=" + math + ", comp=" + comp + "]";
+    }
+
     public int getKor() {
         return kor;
     }
