@@ -1,16 +1,18 @@
 package spring.di;
 
-import spring.di.entity.Exam;
-import spring.di.entity.NewExam;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import spring.di.ui.ExamConsole;
-import spring.di.ui.GridExamConsole;
-import spring.di.ui.InlineExamConsole;
+
 
 public class App {
     public static void main(String[] args) {
-        Exam exam = new NewExam();
-        // ExamConsole examConsole = new InlineExamConsole(exam);
-        ExamConsole examConsole = new GridExamConsole(exam);
-        examConsole.print();
+        ApplicationContext context = 
+            new ClassPathXmlApplicationContext("spring/di/setting.xml");
+        
+        ExamConsole console = context.getBean(ExamConsole.class);
+        // ExamConsole console = (ExamConsole) context.getBean("examConsole");
+        console.print();
     }
 }

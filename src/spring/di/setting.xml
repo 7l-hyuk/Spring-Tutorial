@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+>
+    <bean id="exam" class="spring.di.entity.NewExam">
+        <property name="kor">
+            <value>100</value>
+        </property>
+        <property name="eng" value="100" />
+        <property name="math" value="100" />
+        <property name="comp" value="100" />
+    </bean>
+    <bean id="examConsole" class="spring.di.ui.InlineExamConsole">
+        <property name="exam" ref="exam" />
+    </bean>
+</beans>
