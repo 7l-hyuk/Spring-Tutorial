@@ -18,10 +18,13 @@ public class Program {
             new InvocationHandler() {
                 @Override
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                    // cross-cutting consern
                     long start = System.currentTimeMillis();
                     
+                    // core consern
                     Object result = method.invoke(exam, args);
-
+                    
+                    // cross-cutting consern
                     long end = System.currentTimeMillis();
                     String message = (end - start) + "ms";
                     System.out.println(message);
