@@ -20,24 +20,23 @@ public class NewExam implements Exam {
 
     @Override
     public int total() {
-        long start = System.currentTimeMillis();
-
         int result = this.kor + this.eng + this.math + this.comp;
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        long end = System.currentTimeMillis();
-        String message = (end - start) + "ms";
-        System.out.println(message);
         return result;
     }
 
     @Override
     public float avg() {
         float result = this.total() / 4.0f;
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return result;
     }
 
