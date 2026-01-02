@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
+    
+    @Autowired
+    @Qualifier("exam2")
     private Exam exam;
 
     public InlineExamConsole() {}
@@ -19,8 +22,6 @@ public class InlineExamConsole implements ExamConsole {
         System.out.printf("Total: %d | AVG: %f%n", this.exam.total(), this.exam.avg());
     }
 
-    @Autowired
-    @Qualifier("exam2")
     @Override
     public void setExam(Exam exam) {
         this.exam = exam;
