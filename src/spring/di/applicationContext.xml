@@ -14,8 +14,7 @@
         https://www.springframework.org/schema/util/spring-util.xsd"
 >
     <context:annotation-config />
-    <bean class="spring.di.entity.NewExam"
-        p:kor="100" p:eng="100" p:math="100" p:comp="100"
-    />
+    <bean id="exam1" class="spring.di.entity.NewExam" p:kor="100" p:eng="100" p:math="100" p:comp="100" />
+    <bean id="exam2" class="spring.di.entity.NewExam" p:kor="0" p:eng="0" p:math="0" p:comp="0" />
     <bean id="examConsole" class="spring.di.ui.InlineExamConsole" />
 </beans>
