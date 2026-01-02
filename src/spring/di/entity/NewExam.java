@@ -1,18 +1,14 @@
 package spring.di.entity;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 
-@Component("exam2")
 public class NewExam implements Exam {
     @Value("100")
     private int kor;
     @Value("100")
     private int eng;
-    @Value("100")
     private int math;
-    @Value("100")
     private int comp;
 
     public NewExam() {
