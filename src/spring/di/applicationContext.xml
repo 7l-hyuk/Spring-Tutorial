@@ -13,6 +13,5 @@
         http://www.springframework.org/schema/util
         https://www.springframework.org/schema/util/spring-util.xsd"
 >
-    <context:annotation-config />
-    <bean id="examConsole" class="spring.di.ui.InlineExamConsole" />
+    <context:component-scan base-package="spring.di.ui" />
 </beans>
