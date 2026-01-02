@@ -4,30 +4,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:p="http://www.springframework.org/schema/p"
     xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/util
         https://www.springframework.org/schema/util/spring-util.xsd"
 >
-    <bean id="exam" class="spring.di.entity.NewExam"
+    <context:annotation-config />
+    <bean class="spring.di.entity.NewExam"
         p:kor="100" p:eng="100" p:math="100" p:comp="100"
     />
-    <bean id="examConsole" class="spring.di.ui.InlineExamConsole">
-        <property name="exam" ref="exam" />
-    </bean>
-
-    <util:list id="exams" list-class="java.util.ArrayList">
-        <bean class="spring.di.entity.NewExam" p:kor="10" p:eng="10" p:math="10" p:comp="10" />
-        <ref bean="exam" />
-    </util:list>
-
-    <!-- <bean id="exams" class="java.util.ArrayList">
-        <constructor-arg>
-            <list>
-                <bean class="spring.di.entity.NewExam" p:kor="10" p:eng="10" p:math="10" p:comp="10" />
-                <ref bean="exam" />
-            </list>
-        </constructor-arg>
-    </bean> -->
+    <bean id="examConsole" class="spring.di.ui.InlineExamConsole" />
 </beans>
