@@ -6,14 +6,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
-    
-    @Autowired
-    @Qualifier("exam2")
     private Exam exam;
 
     public InlineExamConsole() {}
 
-    public InlineExamConsole(Exam exam) {
+    @Autowired
+    public InlineExamConsole(@Qualifier("exam2") Exam exam) {
         this.exam = exam;
     }
 
