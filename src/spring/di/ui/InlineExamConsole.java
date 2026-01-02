@@ -1,9 +1,19 @@
 package spring.di.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import spring.di.entity.Exam;
 
+@Component("examConsole")
 public class InlineExamConsole implements ExamConsole {
+    
+    @Autowired
+    @Qualifier("exam2")
     private Exam exam;
+
+    public InlineExamConsole() {}
 
     public InlineExamConsole(Exam exam) {
         this.exam = exam;
@@ -11,7 +21,12 @@ public class InlineExamConsole implements ExamConsole {
 
     @Override
     public void print() {
-        System.out.printf("Total: %d | AVG: %f", this.exam.total(), this.exam.avg());
+        System.out.printf("Total: %d | AVG: %f%n", this.exam.total(), this.exam.avg());
+    }
+
+    @Override
+    public void setExam(Exam exam) {
+        this.exam = exam;
     }
 
 }
