@@ -23,11 +23,11 @@
         <property name="advice" ref="logBeforeAdvice" />
         <property name="mappedName" value="total" />
     </bean>
-    <bean id="classicAroundAdvisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+    <bean id="classicAroundAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
         <property name="advice" ref="logAroundAdvice" />
-        <property name="mappedNameS">
+        <property name="patterns">
             <list>
-                <value>total</value>
+                <value>.*to.*</value>
             </list>
         </property>
     </bean>
