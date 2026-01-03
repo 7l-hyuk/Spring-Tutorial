@@ -21,6 +21,10 @@ public class NewExam implements Exam {
     @Override
     public int total() {
         int result = this.kor + this.eng + this.math + this.comp;
+
+        if (this.kor > 100)
+            throw new IllegalArgumentException("kor > 100");
+
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {

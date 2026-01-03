@@ -13,10 +13,11 @@
         http://www.springframework.org/schema/util
         https://www.springframework.org/schema/util/spring-util.xsd"
 >
-    <bean id="target" class="spring.aop.entity.NewExam" p:kor="1" p:eng="1" />
+    <bean id="target" class="spring.aop.entity.NewExam" p:kor="101" p:eng="1" />
     <bean id="logAroundAdvice" class="spring.aop.advice.LogAroundAdvice" />
     <bean id="logBeforeAdvice" class="spring.aop.advice.LogBeforeAdvice" />
     <bean id="logAfterReturningAdvice" class="spring.aop.advice.LogAfterReturningAdvice" />
+    <bean id="logAfterThrowingAdvice" class="spring.aop.advice.LogAfterThrowingAdvice" />
     <bean id="exam" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="target" />
         <property name="interceptorNames">
@@ -24,6 +25,7 @@
                 <value>logBeforeAdvice</value>
                 <value>logAroundAdvice</value>
                 <value>logAfterReturningAdvice</value>
+                <value>logAfterThrowingAdvice</value>
             </list>
         </property>
     </bean>
