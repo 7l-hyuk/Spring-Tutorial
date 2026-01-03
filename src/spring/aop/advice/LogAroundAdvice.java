@@ -1,9 +1,8 @@
-package spring.aop;
-
-import javax.sound.midi.SysexMessage;
+package spring.aop.advice;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
+
 
 public class LogAroundAdvice implements MethodInterceptor {
 
